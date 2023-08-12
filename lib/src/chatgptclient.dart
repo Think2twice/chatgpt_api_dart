@@ -7,8 +7,8 @@ import 'stream_client.dart';
 /// Support various models such as gpt-3.5-turbo, gpt-4, etc
 class ChatGPTClient {
   /// OpenAI ChatGPT Completions API Endpoint URL
-  final url = Uri.https("api.openai.com", "/v1/chat/completions");
-
+  //final url = Uri.https("api.openai.com", "/v1/chat/completions");
+  Uri url;
   /// OpenAI API Key which you can get from https://openai.com/api
   String apiKey;
 
@@ -25,7 +25,8 @@ class ChatGPTClient {
 
   /// Initializer, API key is required
   ChatGPTClient(
-      {required this.apiKey,
+      {required this.apiKey
+      required this.apiUrl
       this.model = "gpt-3.5-turbo",
       this.systemPrompt = "You are a helpful assistant",
       this.temperature = 0.5});
